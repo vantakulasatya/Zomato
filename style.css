@@ -1,0 +1,442 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  :root {
+      --primary: #cb202d;
+      --secondary: #ffffff;
+      --text-dark: #1c1c1c;
+      --text-light: #6b6b6b;
+  }
+
+  body {
+      background-color: #f8f8f8;
+      color: var(--text-dark);
+  }
+
+  header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+  }
+
+  .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+  }
+
+  .logo {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 1px;
+  }
+
+  .logo span {
+      color: var(--primary);
+  }
+
+  .nav-links {
+      display: flex;
+      gap: 30px;
+  }
+
+  .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+      color: var(--primary);
+  }
+
+  .hero {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      padding: 0 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .hero h1 {
+      color: white;
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+  }
+
+  .hero p {
+      color: #f1f1f1;
+      font-size: 18px;
+      margin-bottom: 30px;
+  }
+
+  .search-container {
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .search-input {
+      flex-grow: 1;
+      padding: 16px 20px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+  }
+
+  .search-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 16px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+
+  .search-btn:hover {
+      background-color: #b71c24;
+  }
+
+  .categories {
+      padding: 60px 10%;
+      text-align: center;
+  }
+
+  .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+  }
+
+  .section-title::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background-color: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+  }
+
+  .category-card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+  }
+
+  .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .category-img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  .category-info {
+      padding: 20px;
+  }
+
+  .category-info h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+
+  .category-info p {
+      color: var(--text-light);
+      font-size: 14px;
+  }
+
+  .featured {
+      padding: 60px 10%;
+      background-color: white;
+  }
+
+  .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+  }
+
+  .restaurant-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+  }
+
+  .restaurant-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .restaurant-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+  }
+
+  .restaurant-info {
+      padding: 20px;
+  }
+
+  .restaurant-name {
+      font-size: 22px;
+      margin-bottom: 10px;
+  }
+
+  .restaurant-cuisine {
+      color: var(--text-light);
+      margin-bottom: 10px;
+  }
+
+  .restaurant-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+
+  .rating {
+      background-color: green;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-right: 10px;
+  }
+
+  .restaurant-time-price {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-light);
+      font-size: 14px;
+  }
+
+  .app-section {
+      padding: 60px 10%;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+  }
+
+  .app-content {
+      flex: 1;
+      min-width: 300px;
+  }
+
+  .app-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+  }
+
+  .app-description {
+      color: var(--text-light);
+      margin-bottom: 30px;
+      line-height: 1.6;
+  }
+
+  .app-btns {
+      display: flex;
+      gap: 20px;
+  }
+
+  .app-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #000;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+  }
+
+  .app-btn:hover {
+      background-color: #333;
+  }
+
+  .app-store-logo {
+      width: 24px;
+      height: 24px;
+  }
+
+  .app-btn-text {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .app-btn-small {
+      font-size: 12px;
+  }
+
+  .app-btn-large {
+      font-size: 16px;
+      font-weight: 500;
+  }
+
+  .app-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+  }
+
+  .mobile-img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  footer {
+      background-color: #f8f8f8;
+      padding: 60px 10% 30px;
+  }
+
+  .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+  }
+
+  .footer-column h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+  }
+
+  .footer-column h3::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      background-color: var(--primary);
+      bottom: -10px;
+      left: 0;
+  }
+
+  .footer-links {
+      list-style-type: none;
+  }
+
+  .footer-link {
+      margin-bottom: 12px;
+  }
+
+  .footer-link a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+  }
+
+  .footer-link a:hover {
+      color: var(--primary);
+  }
+
+  .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+  }
+
+  .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+      background-color: var(--primary);
+      color: white;
+  }
+
+  .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #e0e0e0;
+  }
+
+  .copyright {
+      color: var(--text-light);
+      font-size: 14px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .nav-container {
+          flex-direction: column;
+          gap: 20px;
+      }
+
+      .hero h1 {
+          font-size: 36px;
+      }
+
+      .search-container {
+          flex-direction: column;
+      }
+
+      .search-btn {
+          width: 100%;
+      }
+
+      .app-section {
+          flex-direction: column;
+          text-align: center;
+      }
+
+      .app-btns {
+          justify-content: center;
+      }
+
+      .app-content {
+          order: 2;
+      }
+
+      .app-image {
+          order: 1;
+      }
+  }
